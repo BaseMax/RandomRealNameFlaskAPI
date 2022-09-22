@@ -1,4 +1,4 @@
-# Random Real Name in Python Flask (JSON API)
+# Random Real Name in Python Flask (JSON Restful API)
 
 A web service API for generating random user-names (gender-aware), An Python-based web service to create unique random usernames lists. (JSON API)
 

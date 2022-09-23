@@ -27,8 +27,6 @@ def getNameOfFemales():
     return FemaleFirstNames[getRandomNumber(0, len(FemaleFirstNames) - 1)]
 
 def getName(flag=0):
-    name = None
-
     if flag == 0:
         num = getRandomNumber(0, 2)
         if num == 0:
@@ -62,7 +60,8 @@ def CreateUser(flag=0):
     user = getName(flag=flag)
     user += Seprator()
     user += getLastName()
-    user += str(getDate())
+    if getRandomNumber(1, 10) <= 7:
+        user += str(getDate())
     return user
 
 
@@ -70,7 +69,6 @@ def CreateSeveralUser(count=1, gender=0):
     users = set()
 
     while len(users) != count:
-        for user in range(count):
-            users.add(CreateUser(flag=gender))
+        users.add(CreateUser(flag=gender))
     
     return list(users)

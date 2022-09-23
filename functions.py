@@ -1,9 +1,13 @@
 from random import randrange
 from datetime import date
 
-lastNames = open("./last-names.txt", mode="r", encoding="utf-8").read().splitlines()
+LastNames = open("./last-names.txt", mode="r", encoding="utf-8").read().splitlines()
 MaleFirstNames = open("./male-first-names.txt", mode="r", encoding="utf-8").read().splitlines()
 FemaleFirstNames = open("./female-first-names.txt", mode="r", encoding="utf-8").read().splitlines()
+ReadMe = open("./README.md", mode="r", encoding="utf-8").read()
+
+def GetReadMe():
+    return ReadMe
 
 
 def getRandomNumber(start=0, end=1):
@@ -48,7 +52,7 @@ def getName(flag=0):
 
 
 def getLastName():
-    return lastNames[getRandomNumber(0, len(lastNames) - 1)]
+    return LastNames[getRandomNumber(0, len(LastNames) - 1)]
 
 # 0 -> both
 # 1 -> male
@@ -57,7 +61,7 @@ def getLastName():
 def CreateUser(flag=0):
     user = getName(flag=flag)
     user += Seprator()
-    user += lastNames[getRandomNumber(0, len(lastNames) - 1)]
+    user += LastNames[getRandomNumber(0, len(LastNames) - 1)]
     user += str(getDate())
     return user
 

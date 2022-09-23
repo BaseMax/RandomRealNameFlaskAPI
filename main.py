@@ -1,11 +1,11 @@
-from flask import Flask, render_template, jsonify
-from functions import CreateSeveralUser
+from flask import Flask, jsonify
+from functions import CreateSeveralUser, GetReadMe
 
 app = Flask(__name__)
 
 @app.route("/")
 def mainPage():
-    return render_template("README.html")
+    return GetReadMe()
 
 @app.route("/get")
 @app.route("/get/")

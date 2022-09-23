@@ -61,7 +61,7 @@ def getLastName():
 def CreateUser(flag=0):
     user = getName(flag=flag)
     user += Seprator()
-    user += LastNames[getRandomNumber(0, len(LastNames) - 1)]
+    user += getLastName()
     user += str(getDate())
     return user
 
